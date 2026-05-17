@@ -8,6 +8,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v3
 
@@ -21,7 +23,7 @@ jobs:
         run: flutter pub get
 
       - name: Build Web
-        run: flutter build web --release --base-href "/alkhalifa_dashboard_flutter/"
+        run: flutter build web --release --base-href "/magpie-restaurent/"
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
